@@ -34,10 +34,11 @@ function deleteItem(index: number){
             <tr key={index}>
                
                 <td>
-                    {element.count}
+                    {element.name}
+                    
                 </td>
                 <td>
-                    {element.name}
+                     {element.count}
                 </td>
 
                 <td>

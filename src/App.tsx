@@ -15,10 +15,14 @@ function App(){
         return newList;
       });
 }
+
+  function addItem(item: Item){
+    setList((prev) =>([...prev, item]));
+  }
   
   return(
     <C.Container>
-      <CrudBar />
+      <CrudBar addItem={addItem}/>
       <Table List={List} setList={setList} deleteItem={deleteItem}/>
     </C.Container>
   )
