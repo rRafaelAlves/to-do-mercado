@@ -23,7 +23,8 @@ function App(){
   return(
     <C.Container>
       <CrudBar addItem={addItem}/>
-      <Table List={List} setList={setList} deleteItem={deleteItem}/>
+      {List.length != 0? <Table List={List} setList={setList} deleteItem={deleteItem}/>: <></>}
+      
     </C.Container>
   )
 

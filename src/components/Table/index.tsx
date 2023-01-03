@@ -43,6 +43,7 @@ function deleteItem(index: number){
 
                 <td>
                     <button onClick={()=>deleteItem(index)}>delete</button>
+                    <button onClick={()=>deleteItem(index)}>edite</button>
                 </td>
             </tr>
         ))}

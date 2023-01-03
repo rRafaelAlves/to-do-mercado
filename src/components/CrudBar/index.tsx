@@ -37,7 +37,7 @@ function CrudBar({addItem}:Props){
     <C.Container>
 
         <form id='form' onSubmit={handleSubmit}>
-            <input
+            <C.InputForm
             type="text"
             id='name'
             name='name'
@@ -45,7 +45,7 @@ function CrudBar({addItem}:Props){
             onChange={handleChange}
              />
 
-            <input
+            <C.InputForm
              type="number" 
              id='count'
              name='count'
@@ -53,7 +53,8 @@ function CrudBar({addItem}:Props){
              onChange={handleChange} 
              />
 
-             <input type="submit" form='form' />
+             <C.ButtonSubmit type="submit" value="Adicionar" />
+             
         </form>
 
     </C.Container>
