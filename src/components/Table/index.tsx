@@ -10,18 +10,29 @@ type Props={
     List: Item[]
     deleteItem: (index: number)=> void
     editItem: (index: number) => void
-    isEditMode: boolean
     setList: Dispatch<SetStateAction<Item[]>>
 }
 
-function Table({List, deleteItem, editItem, isEditMode, setList}: Props){
+function Table({List, deleteItem, editItem, setList}: Props){
 
 
     function onChange(index: number, event:React.ChangeEvent<HTMLInputElement> ){
 
-        //console.log(event.currentTarget.value)
+        console.log(event.target.value)
 
-        setList(prevList => [ prevList[index] = {name: "d", count: 2}]);
+        const objAux = [...List]
+
+        if(event.target.id === 'name'){
+            
+            objAux[index].name = event.target.value;
+        }
+        if(event.target.id === 'count'){
+            objAux[index].count = parseInt(event.target.value, 10);
+        }
+
+        setList(objAux);
+
+        
     }
 
     return(
@@ -35,17 +46,18 @@ function Table({List, deleteItem, editItem, isEditMode, setList}: Props){
             </tr>
         </thead>
         <tbody>
+
         {List?.map((element, index)=>(
             <tr key={index}>   
 
                     <td>
 
-                    { isEditMode ? <input type="text" value={element.name} onChange={e => onChange(index, e)} /> : element.name}
+                    { element.isEditMode ? <C.InputFormName type="text" value={element.name} id="name" onChange={e => onChange(index, e)} /> : element.name}
                         
                     </td>
                     <td>
 
-                    { isEditMode ? <input type="number"  value={element.count} onChange={e => onChange(index, e)}/> : element.count}
+                    { element.isEditMode ? <C.InputFormCount type="number"  value={element.count} id="count" onChange={e => onChange(index, e)}/> : element.count}
 
                     </td>
                     
@@ -53,7 +65,7 @@ function Table({List, deleteItem, editItem, isEditMode, setList}: Props){
                     <td className='table__edit'>
                         <DoNotDisturbIcon sx={{color:'red'}}  onClick={()=>deleteItem(index)}/>
                         
-                        {isEditMode?  <CheckCircleIcon sx={{color:'green'}} onClick={()=>editItem(index)} /> : <EditIcon sx={{color:'hotpink'}} onClick={()=>editItem(index)} />}
+                        {element.isEditMode ?  <CheckCircleIcon sx={{color:'green'}} onClick={()=>editItem(index)} /> : <EditIcon sx={{color:'hotpink'}} onClick={()=>editItem(index)} />}
                     </td>
 
                

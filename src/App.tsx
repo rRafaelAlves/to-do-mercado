@@ -7,7 +7,6 @@ import { Item } from './types/Item';
 function App(){
 
   const [List, setList] = React.useState<Array<Item>>([]);
-  const [isEditMode, setIsEditMode] = React.useState<boolean>(false);
 
   function deleteItem(index: number){
     setList(prevList => {
@@ -22,17 +21,29 @@ function App(){
   }
   
   function editItem(index: number){
-    setIsEditMode(!isEditMode);
+    
+    const newList = [...List];
+    newList[index].isEditMode = !newList[index].isEditMode;
+    setList(newList);
   }
   
   return(
     <C.Container>
+
+
+      <C.LogoContainer>
+
+        <h1>Anote suas compras</h1>
+      </C.LogoContainer>
+        
+ 
+
       <CrudBar addItem={addItem}/>
-      {List.length != 0? <Table 
+
+      {List.length !== 0? <Table 
       List={List} 
       deleteItem={deleteItem} 
       editItem={editItem}
-      isEditMode={isEditMode}
       setList={setList}
       />: <></>}
       

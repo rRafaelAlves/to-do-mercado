@@ -9,10 +9,11 @@ type Props ={
 
 function CrudBar({addItem}:Props){
 
-    const [initialValues, setInitialValues] = React.useState<Item>({name: '', count: 0});
+    const initialValues = {name: '', count: 0, isEditMode: false};
 
     function onSubmit(values: Item){
         addItem(values);
+        setValues({name: '', count: 0, isEditMode: false});
     }
 
     const formikOptions = {
@@ -30,6 +31,7 @@ function CrudBar({addItem}:Props){
         handleBlur,
         handleChange,
         handleSubmit,
+        setValues
       } = useFormik(formikOptions);
     
     return(
@@ -43,6 +45,7 @@ function CrudBar({addItem}:Props){
             name='name'
             value={values.name} 
             onChange={handleChange}
+            placeholder="Digite o nome da compra"
              />
 
             <C.InputForm
@@ -51,6 +54,7 @@ function CrudBar({addItem}:Props){
              name='count'
              value={values.count} 
              onChange={handleChange} 
+             
              />
 
              <C.ButtonSubmit type="submit" value="Adicionar" />

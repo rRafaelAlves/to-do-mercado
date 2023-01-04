@@ -9,8 +9,6 @@ justify-content: center;
 align-items: center;
 border-radius: 10px 10px 0 0;
 
-
-
 form{
     display: flex;
     width: 100%;

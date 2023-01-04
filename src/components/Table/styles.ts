@@ -12,24 +12,29 @@ background-color: #FFEFFF;
 padding-bottom: 20px;
 
 th{
-  
     padding: 10px 10px;
     text-transform: uppercase;
-    color: #FFF;
-    font-size: 18px;
-     -webkit-text-stroke: 0.6px #000;
-    
-    
+    color: #000;
 }
 td{
-  
     text-align: center;
-
     &.table__edit :first-child{
         margin-right: 20px;
         cursor: pointer;
     }
-   
 }
 
+`
+
+export const InputFormName = styled.input`
+
+padding: 2px;
+width: 120px;
+
+`
+
+export const InputFormCount = styled.input`
+
+padding: 2px;
+width: 40px;
 `
