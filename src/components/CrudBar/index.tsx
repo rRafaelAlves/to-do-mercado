@@ -39,6 +39,7 @@ function CrudBar({addItem}:Props){
     <C.Container>
 
         <form id='form' onSubmit={handleSubmit}>
+            
             <C.InputForm
             type="text"
             id='name'

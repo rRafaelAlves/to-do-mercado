@@ -37,12 +37,12 @@ function Table({List, deleteItem, editItem, setList}: Props){
 
     return(
 
-    <C.Table>
+    <C.Table className='root'>
         <thead>
             <tr>
                 <th>Nome</th>
                 <th>Quantidade</th>
-                <th>Edite</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>

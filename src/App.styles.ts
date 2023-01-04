@@ -28,6 +28,14 @@ justify-content: center;
 top: 16px;
 box-shadow: -1px 0px 41px 1px rgba(248,248,248,0.8);
 
+@media (max-width: 760px){
+
+    &{
+    display: none;
+        }
+
+}
+
 h1{
     font-family: 'Dancing Stript', sans-serif;
     color: white;

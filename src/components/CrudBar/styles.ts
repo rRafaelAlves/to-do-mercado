@@ -3,11 +3,29 @@ import styled from "styled-components";
 export const Container = styled.div`
 background-color: #FFC0CB;
 width: 100%;
-height: 4vw;
 display: flex;
+height: 10%;
 justify-content: center;
 align-items: center;
 border-radius: 10px 10px 0 0;
+
+
+@media (max-width: 760px){
+
+    &{
+        height: 28%;
+        width: 100%;
+    }
+
+form{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    }
+}
 
 form{
     display: flex;
@@ -33,6 +51,7 @@ background-color: white;
 text-transform: uppercase;
 cursor: pointer;
 transition: ease-in-out 0.2s;
+
 
     &:hover{
         background-color: #FFDDF8;
