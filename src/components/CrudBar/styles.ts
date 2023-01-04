@@ -39,6 +39,16 @@ text-align: center;
 border-radius: 4px;
 padding: 2px 10px 2px 10px;
 border: none;
+background-color: #FFEFFF;
+
+@media (max-width: 760px){
+
+&{
+   padding: 12px;
+    
+}
+
+}
 
 `
 
@@ -52,9 +62,17 @@ text-transform: uppercase;
 cursor: pointer;
 transition: ease-in-out 0.2s;
 
-
     &:hover{
         background-color: #FFDDF8;
         color: #111;
     }
+
+    @media (max-width: 760px){
+
+        &{
+     height: 20%;
+    
+    }
+
+}
 `

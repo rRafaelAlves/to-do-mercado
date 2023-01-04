@@ -10,12 +10,13 @@ border-top: none;
 box-shadow: 11px 10px 24px -6px rgba(0,0,0,0.62);
 background-color: #FFEFFF;
 padding-bottom: 20px;
+padding-top: 6px;
 
 @media (max-width: 760px){
 
 &{
    padding: 2px;
-    height: 30vh;
+    height: 20vh;
 }
 
 }
@@ -73,4 +74,5 @@ export const InputFormCount = styled.input`
 
 padding: 2px;
 width: 40px;
+
 `

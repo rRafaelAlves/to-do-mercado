@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import backgroundDesktop from './assets/background-desktop.png';
+import backgroundMobile from './assets/background-mobile.png'
 
 
 
 
 export const Container = styled.div`
-background-color: #FFDDF8;
+background-image: url(${backgroundDesktop});
+background-size: 100% 100%;
 height: 100vh;
 width: 100vw - 30vw;
 display: flex;
@@ -12,6 +15,14 @@ justify-content: center;
 align-items: center;
 padding: 0px 15vw 0 15vw;
 flex-direction: column;
+
+@media (max-width: 760px){
+
+&{
+    background-image: url(${backgroundMobile});
+    }
+
+}
 `
 
 
@@ -31,7 +42,8 @@ box-shadow: -1px 0px 41px 1px rgba(248,248,248,0.8);
 @media (max-width: 760px){
 
     &{
-    display: none;
+        transform: scale(70%);
+        top: 10%;
         }
 
 }
