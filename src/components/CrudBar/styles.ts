@@ -4,7 +4,7 @@ export const Container = styled.div`
 background-color: #FFC0CB;
 width: 100%;
 display: flex;
-height: 10%;
+height: 18%;
 justify-content: center;
 align-items: center;
 border-radius: 10px 10px 0 0;
@@ -32,12 +32,21 @@ form{
     width: 100%;
     justify-content: space-around;
 
+    @media (max-width: 760px){
+
+        .errors{
+    color: red; 
+    font-size: 12px;
+
+            }
+    
+    }
+
     .errors{
     color: red; 
     font-size: 12px;
     
-    
-}
+    }
 }
 
 
@@ -46,16 +55,17 @@ form{
 export const InputForm = styled.input`
 text-align: center;
 border-radius: 4px;
-padding: 16px 18px;
+padding-top: 10px;
+padding-bottom: 10px;
 border: none;
 background-color: #FFEFFF;
 
 @media (max-width: 760px){
 
-&{
+        &{
    padding: 12px;
     
-}
+    }
 
 }
 
@@ -84,4 +94,11 @@ transition: ease-in-out 0.2s;
     }
 
 }
+`
+
+
+export const InputContainer = styled.div`
+display: flex;
+flex-direction: column;
+
 `

@@ -51,7 +51,7 @@ function Table({List, deleteItem, editItem, setList}: Props){
             <tr key={index}>   
 
                     <td>
-
+                    
                     { element.isEditMode ? <C.InputFormName type="text" value={element.name} id="name" onChange={e => onChange(index, e)} /> : element.name}
                         
                     </td>

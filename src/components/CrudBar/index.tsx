@@ -46,7 +46,7 @@ function CrudBar({addItem}:Props){
         <form id='form' onSubmit={handleSubmit}>
 
         
-    
+            <C.InputContainer>
             <C.InputForm
             type="text"
             id='name'
@@ -56,13 +56,15 @@ function CrudBar({addItem}:Props){
             placeholder="Digite o nome da compra"
              />
              <p className="errors">{errors.name ?? <>{errors.name}</>}</p>
+             </C.InputContainer>
 
             <C.InputForm
              type="number" 
              id='count'
              name='count'
              value={values.count} 
-             onChange={handleChange} 
+             onChange={handleChange}
+             
              
              />
             <p className="errors">{errors.count ?? <>{errors.count}</>}</p>
