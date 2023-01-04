@@ -2,6 +2,8 @@ import React from 'react';
 import { Item } from '../../types/Item';
 import * as C from './styles';
 import { useFormik } from 'formik';
+import { CrudSchema } from './schema';
+
 
 type Props ={
     addItem: (values: Item) => void
@@ -9,6 +11,7 @@ type Props ={
 
 function CrudBar({addItem}:Props){
 
+    const validationSchema = React.useMemo(() => CrudSchema(), [] );
     const initialValues = {name: '', count: 0, isEditMode: false};
 
     function onSubmit(values: Item){
@@ -20,6 +23,7 @@ function CrudBar({addItem}:Props){
         validateOnBlur: true,
         validateOnChange: false,
         enableReinitialize: true,
+        validationSchema,
         initialValues,
         onSubmit
       }
@@ -37,9 +41,12 @@ function CrudBar({addItem}:Props){
     return(
 
     <C.Container>
+        
 
         <form id='form' onSubmit={handleSubmit}>
-            
+
+        
+    
             <C.InputForm
             type="text"
             id='name'
@@ -48,6 +55,7 @@ function CrudBar({addItem}:Props){
             onChange={handleChange}
             placeholder="Digite o nome da compra"
              />
+             <p className="errors">{errors.name ?? <>{errors.name}</>}</p>
 
             <C.InputForm
              type="number" 
@@ -57,6 +65,7 @@ function CrudBar({addItem}:Props){
              onChange={handleChange} 
              
              />
+            <p className="errors">{errors.count ?? <>{errors.count}</>}</p>
 
              <C.ButtonSubmit type="submit" value="Adicionar" />
              

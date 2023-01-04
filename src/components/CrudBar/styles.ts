@@ -31,13 +31,22 @@ form{
     display: flex;
     width: 100%;
     justify-content: space-around;
+
+    .errors{
+    color: red; 
+    font-size: 12px;
+    
+    
 }
+}
+
+
 `
 
 export const InputForm = styled.input`
 text-align: center;
 border-radius: 4px;
-padding: 2px 10px 2px 10px;
+padding: 16px 18px;
 border: none;
 background-color: #FFEFFF;
 
