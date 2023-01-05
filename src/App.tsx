@@ -7,6 +7,7 @@ import { Item } from './types/Item';
 function App(){
 
   const [List, setList] = React.useState<Array<Item>>([]);
+  const LimitItens = 15;
 
   function deleteItem(index: number){
     setList(prevList => {
@@ -17,6 +18,9 @@ function App(){
 }
 
   function addItem(item: Item){
+    if(List.length >= LimitItens){
+      return
+    }
     setList((prev) =>([...prev, item]));
   }
   
@@ -30,11 +34,12 @@ function App(){
   return(
     <C.Container>
 
-
-      <C.LogoContainer>
+    {List.length >= 5 ? <></> :       
+        <C.LogoContainer>
 
         <h1>Anote suas compras</h1>
-      </C.LogoContainer>
+        </C.LogoContainer>}
+
         
  
 

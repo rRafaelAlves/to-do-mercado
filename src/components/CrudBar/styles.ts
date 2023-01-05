@@ -27,6 +27,17 @@ form{
     }
 }
 
+@media (max-width: 980px){
+
+&{
+    
+    width: 100%;
+    height: 24%;
+
+    }
+
+}
+
 form{
     display: flex;
     width: 100%;
@@ -37,6 +48,7 @@ form{
         .errors{
     color: red; 
     font-size: 12px;
+    padding-top: 2px;
 
             }
     
@@ -69,6 +81,16 @@ background-color: #FFEFFF;
 
 }
 
+@media (max-width: 980px){
+
+&{
+    padding: 12;
+    transform: scale(90%);
+
+    }
+
+}
+
 `
 
 export const ButtonSubmit = styled.input`
@@ -94,11 +116,23 @@ transition: ease-in-out 0.2s;
     }
 
 }
+
+@media (max-width: 980px){
+
+&{
+    
+    transform: scale(80%);
+
+    }
+
+}
 `
 
 
 export const InputContainer = styled.div`
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items: center;
 
 `

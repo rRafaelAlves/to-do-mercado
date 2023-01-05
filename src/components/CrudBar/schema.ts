@@ -8,7 +8,8 @@ export const CrudSchema = ()=> Yup.object({
 
     count: Yup.number()
     .required("Insira a quantidade da compra")
+    .nullable()
     .positive("Insira um número positivo para quantidade")
-    .max(2,'Não são muitos itens?')
+    .max(99,'Não são muitos itens?')
     .integer("Que compra estranha..."),
   });
