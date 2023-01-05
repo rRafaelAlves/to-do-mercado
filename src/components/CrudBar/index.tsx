@@ -49,18 +49,20 @@ function CrudBar({addItem}:Props){
 
 
         <C.InputContainer>
+            <label htmlFor='name'>Nome da compra</label>
                 <C.InputForm
                 type="text"
                 id='name'
                 name='name'
                 value={values.name} 
                 onChange={handleChange}
-                placeholder="Digite o nome da compra"
+               
                 />
                 <p className="errors">{errors.name ?? <>{errors.name}</>}</p>
             </C.InputContainer>
 
             <C.InputContainer>
+                <label htmlFor='count'>Quantidade</label>
                 <C.InputForm
                 type="number" 
                 id='count'

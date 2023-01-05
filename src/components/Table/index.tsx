@@ -20,16 +20,19 @@ function Table({List, deleteItem, editItem, setList}: Props){
 
         console.log(event.target.value)
 
+
+
         const objAux = [...List]
 
         if(event.target.id === 'name'){
-            
+ 
             objAux[index].name = event.target.value;
         }
         if(event.target.id === 'count'){
             objAux[index].count = parseInt(event.target.value, 10);
         }
 
+        
         setList(objAux);
 
         

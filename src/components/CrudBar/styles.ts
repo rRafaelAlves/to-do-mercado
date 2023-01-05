@@ -71,6 +71,7 @@ padding-top: 10px;
 padding-bottom: 10px;
 border: none;
 background-color: #FFEFFF;
+margin-top: 6px;
 
 @media (max-width: 760px){
 
@@ -134,5 +135,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+label{
+    font-size: 12px;
+}
 
 `
