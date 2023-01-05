@@ -12,10 +12,6 @@ border-radius: 10px 10px 0 0;
 
 @media (max-width: 760px){
 
-    &{
-        height: 28%;
-        width: 100%;
-    }
 
 form{
     display: flex;
@@ -32,7 +28,7 @@ form{
 &{
     
     width: 100%;
-    height: 24%;
+    height: 32%;
 
     }
 

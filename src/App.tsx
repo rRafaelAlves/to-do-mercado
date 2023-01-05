@@ -7,7 +7,7 @@ import { Item } from './types/Item';
 function App(){
 
   const [List, setList] = React.useState<Array<Item>>([]);
-  const LimitItens = 15;
+  const LimitItens = 14;
 
   function deleteItem(index: number){
     setList(prevList => {
